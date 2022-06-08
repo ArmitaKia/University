@@ -17,6 +17,7 @@ class Student : public Person
     :Person(firstName,lastName,workHours){};
     Student(const Student& student):Person(student){};//inja {} hast moshkeli nadare?
     ~Student();
+    void setCourse(Course* ptCourse);
     double gpa();
     double calculateSalary(double workHours);
     static bool validate(string idString);
