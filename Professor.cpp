@@ -104,3 +104,7 @@
             return true;
         return false;
     }
+    string Professor::getTitle()
+    {
+        return title;
+    }

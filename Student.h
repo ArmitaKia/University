@@ -19,7 +19,7 @@ class Student : public Person
     ~Student();
     void setCourse(Course* ptCourse);
     double gpa();
-    double calculateSalary(double workHours);
+    double calculateSalary();
     static bool validate(string idString);
     
     friend ostream& operator << (ostream& strm , const Student student);

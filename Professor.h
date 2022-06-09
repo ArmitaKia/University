@@ -16,6 +16,7 @@ class Professor : public Person
     double calculateSalary();
     static bool validate(string idString);
     bool checkTitle(string title);
+    string getTitle();
 };
     ostream& operator << (ostream& strm , const Professor professor);
     istream& operator >> (istream& strm , Professor& professor);

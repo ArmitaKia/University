@@ -98,8 +98,9 @@
         }
         return sum/numOfCourse;
     }
-    double Student::calculateSalary(double workHours)
+    double Student::calculateSalary()
     {
+        double workHours = *this->workHours;
         if(gpa()>=17)
             return (20000*workHours+(20000*workHours)/10);
         return 20000*workHours;
