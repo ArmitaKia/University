@@ -1,3 +1,6 @@
+#ifndef STUDENT
+#define STUDENT
+
 #include <iostream>
 #include "Person.h"
 #include "Course.h"
@@ -27,3 +30,4 @@ class Student : public Person
 };
     ostream& operator << (ostream& strm , const Student student);
     istream& operator >> (istream& strm , Student& student);
+#endif

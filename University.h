@@ -1,5 +1,5 @@
-
-
+#ifndef UNIVERSITY
+#define UNIVERSITY
 #include <iostream>
 
 #include "Professor.h"
@@ -44,3 +44,4 @@ class University
 };
     ostream& operator << (ostream& strm , University university);
     istream& operator >> (istream& strm , University& university);
+#endif

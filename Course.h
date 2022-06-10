@@ -1,5 +1,7 @@
-#include <iostream>
+#ifndef COURSE
+#define COURSE
 
+#include <iostream>
 
 using namespace std;
 
@@ -26,3 +28,4 @@ class Course
 };
     ostream& operator << (ostream& strm , const Course course);
     istream& operator >> (istream& strm , Course& course);
+#endif
