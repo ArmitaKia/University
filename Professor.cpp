@@ -43,7 +43,7 @@
             exit(0);
         }
         *professor.workHours = workHours;
-        cout << "Enter title :" << endl;
+        cout << "Enter title (Instructor-Assistant-ProfessorAssociate-Professor-Professor)" << endl;
         string title;
         strm >> title;
         if(checkTitle(title))

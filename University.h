@@ -27,7 +27,7 @@ class University
     double averageGpaOfField(string fieldOfStudy);
     double averageMarkOfCourse(Course course);
     bool isEnoughBudget();
-    friend ostream& operator << (ostream& strm , const University& university);
+    friend ostream& operator << (ostream& strm , University university);
     friend istream& operator >> (istream& strm , University& university);
     void bubbleSort(Professor* prof, int n);
     int calculateYear(Professor prof);

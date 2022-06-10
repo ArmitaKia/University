@@ -1,3 +1,5 @@
+#ifndef PERSON
+#define PERSON
 #include <iostream>
 #include <regex>
 
@@ -18,7 +20,7 @@ class Person
     Person(const Person& person);
     ~Person();
   
-    Person& Person::operator = (const Person &person);
+    Person& operator = (const Person &person);
     void setFirstName(string firstName);
     void setLastName(string lastName);
     void setId(string id);
@@ -35,3 +37,4 @@ class Person
 };
     ostream& operator << (ostream& strm , const Person person);
     istream& operator >> (istream& strm , Person& person);
+#endif
