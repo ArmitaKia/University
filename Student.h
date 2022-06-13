@@ -7,15 +7,15 @@
 
 using namespace std;
 
-class Student : public Person 
+class Student : public Person
 {
-    public:
+public:
     Course* course;
     string fieldOfStudy;
     int numOfCourse;
 
-    public:
-    Student();   
+public:
+    Student();
     Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfSutdy,int numOfCourse);
     Student(const Student& student);
     ~Student();
@@ -24,10 +24,10 @@ class Student : public Person
     double calculateSalary();
     static bool validate(string idString);
     Student& operator = (const Student &t);
-    
+
     friend ostream& operator << (ostream& strm , Student& student);
     friend istream& operator >> (istream& strm , Student& student);
 };
-    ostream& operator << (ostream& strm , Student& student);
-    istream& operator >> (istream& strm , Student& student);
+ostream& operator << (ostream& strm , Student& student);
+istream& operator >> (istream& strm , Student& student);
 #endif

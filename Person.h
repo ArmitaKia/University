@@ -8,19 +8,19 @@ using namespace std;
 
 class Person
 {
-    protected:
+protected:
     string firstName;
     string lastName;
     string id;
     double* workHours;
 
-    public:
+public:
     Person();
     Person(string firstName,string lastName,double* workHours);
     Person(string firstName,string lastName,string id,double* workHours);
     Person(const Person& person);
     ~Person();
-  
+
     Person& operator = (const Person &person);
     void setFirstName(string firstName);
     void setLastName(string lastName);
@@ -36,6 +36,6 @@ class Person
     friend ostream& operator << (ostream& strm , const Person& person);
     friend istream& operator >> (istream& strm , Person& person);
 };
-    ostream& operator << (ostream& strm , const Person& person);
-    istream& operator >> (istream& strm , Person& person);
+ostream& operator << (ostream& strm , const Person& person);
+istream& operator >> (istream& strm , Person& person);
 #endif

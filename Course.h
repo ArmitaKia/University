@@ -5,14 +5,14 @@
 
 using namespace std;
 
-class Course 
+class Course
 {
-    public:
+public:
     string name;
     int unit;
     double* mark;
 
-    public:
+public:
     Course();
     Course(string name,int unit,double* mark);
     Course(const Course& course);
@@ -27,6 +27,6 @@ class Course
     double getMark();
     Course& operator = (const Course &t);
 };
-    ostream& operator << (ostream& strm , const Course& course);
-    istream& operator >> (istream& strm , Course course);
+ostream& operator << (ostream& strm , const Course& course);
+istream& operator >> (istream& strm , Course course);
 #endif

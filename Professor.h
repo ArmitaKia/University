@@ -5,12 +5,12 @@
 #include "Person.h"
 using namespace std;
 
-class Professor : public Person 
+class Professor : public Person
 {
-    private:
+private:
     string title;
 
-    public:
+public:
     Professor();
     Professor(string firstName,string lastName,string id,double* workHours,string title);
     Professor(const Professor& professor);
@@ -22,6 +22,6 @@ class Professor : public Person
     static bool checkTitle(string title);
     string getTitle();
 };
-    ostream& operator << (ostream& strm , const Professor& professor);
-    istream& operator >> (istream& strm , Professor& professor);
+ostream& operator << (ostream& strm , const Professor& professor);
+istream& operator >> (istream& strm , Professor& professor);
 #endif

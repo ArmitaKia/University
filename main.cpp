@@ -1,63 +1,52 @@
 #include <iostream>
+#include "Course.h"
 #include "Person.h"
 #include "Student.h"
-#include "process.h"
+#include "Professor.h"
 #include "University.h"
 
 using namespace std;
 
 int main()
 {
-    Course* ptCourses = new Course[7];
-    for(int i=0;i<7;i++)
-        cin >> ptCourses[i];
-    //There are 7 courses 
+    int numberOfStudents = 1;
+    int numberOfProfessors = 1;
 
-    Student* ptStudent = new Student[12];
-    for(int i=0;i<12;i++)
+    Student* ptStudent = new Student[numberOfStudents];
+
+    for(int i=0;i<numberOfStudents;i++)
+    {
         cin >> ptStudent[i];
-    //There are 12 students
+    }
+    cout << endl;
 
-    Professor* ptProfessors = new Professor[3];
-    for(int i=0;i<3;i++)
-        cin >> ptProfessors[i];
-    //There are 3 Professors
+    Professor* ptProfessor = new Professor[numberOfProfessors];
+    for(int i=0;i<numberOfProfessors;i++)
+        cin >> ptProfessor[i];
+    cout << endl;
 
-    cout << "The station of Courses" << endl;
-    for(int i=0;i<7;i++)
-        cout << ptCourses[i];
 
-    cout << "The station of Students" << endl;
-    for(int i=0;i<12;i++)
-        cout << ptStudent[i];
+    int defualtMark = 0;
+    Course* ptCourses = new Course[1];
+    ptCourses->setName("zaban");
+    ptCourses->setUnit(3);
+    ptCourses->setMark(0.0);
 
-    cout << "The station of Professors" << endl;
-    for(int i=0;i<3;i++)
-        cout << ptProfessors;
-   
-    University university(6000000,3,12,ptProfessors,ptStudent);
-    cout << "The station of University" << endl;
+    University university(1000000,numberOfProfessors,numberOfStudents,ptProfessor,ptStudent);
+
     cout << university;
-
-    cout << "moadel tamame daneshjoha: " << university.averageGpa() << endl;
-    cout << "moadel tamame daneshjoha dar har reshte" << endl;
-    // for(int i=0;i<12;i++)
-    //     if(1==1)//che jori beyad tekrari nagire
-    //         cout << i << ". "<<  ptStudent[i].fieldOfStudy << university.averageGpaOfFiled(ptStudent[i].fieldOfStudy) << endl;
-    // cout << "moadel kaneshjoha dar har dars "<< endl;
-    // for(int i=0;i<7;i++)
-    //     cout << i << ". " << ptCourses[i].getName() << university.averageMarkOfCourse(ptCourses[i].getName()) << endl;
-    // cout << "chap doros be tartib miyangin daneshjoyan" << endl;
-    // university.printCourse();
-    
+    cout << "is enough budget of the university: ";
+    if(university.isEnoughBudget()==0)
+        cout << "yes" << endl;
+    else if(university.isEnoughBudget()==1)
+        cout << "no" << endl;
+    cout << "university average gpa: " << university.averageGpa() << endl;
+    cout << "university average gpa of filed: " << university.averageGpaOfField("computer") << endl;
+    cout << "university average mark of course: " << university.averageMarkOfCourse(ptCourses[0]) << endl;
 
 
-
-
-
-    delete ptCourses;
-    delete ptStudent;
-    delete ptProfessors;
-
+    delete [] ptStudent;
+    delete [] ptProfessor;
+    delete [] ptCourses;
     return 0;
 }
