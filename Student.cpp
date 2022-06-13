@@ -1,11 +1,14 @@
 #include "Student.h"
 
-
-
 Student::Student()
 {
     course = new Course[20];
 }
+
+int Student::getNumOfCourse() const {
+    return numOfCourse;
+}
+
 void Student::setCourse(Course* ptCourse)
 {
     for(int i=0;i<numOfCourse;i++)
@@ -15,7 +18,7 @@ void Student::setCourse(Course* ptCourse)
         course++;
     }
 }
-Student::Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfSutdy,int numOfCourse)
+Student::Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfStudy,int numOfCourse)
         :Person(firstName,lastName,workHours)
 {
     if(validate(id))
@@ -31,9 +34,7 @@ Student::Student(string firstName,string lastName,string id,double* workHours,Co
     Course* ptCourse = this->course;
     for(int i=0;i<numOfCourse;i++)
     {
-        ptCourse[i].name = course[i].name;
-        ptCourse[i].unit = course[i].unit;
-        ptCourse[i].mark = course[i].mark;
+        this->course[i] = course[i];
     }
 }
 
@@ -47,6 +48,21 @@ Student::~Student()
 {
     delete [] course;
 }
+void Student::setFieldOfStudy(const string &fieldOfStudy) {
+    Student::fieldOfStudy = fieldOfStudy;
+}
+
+void Student::setNumOfCourse(int numOfCourse) {
+    Student::numOfCourse = numOfCourse;
+}
+
+Course *Student::getCourse() const {
+    return course;
+}
+
+const string &Student::getFieldOfStudy() const {
+    return fieldOfStudy;
+}
 ostream& operator << (ostream& strm , Student& student)
 {
     cout << "---- Student informaion ----" << endl;
@@ -58,7 +74,7 @@ ostream& operator << (ostream& strm , Student& student)
     cout << "-- Student Courses --" << endl;
     for(int i=0;i<student.numOfCourse;i++)
     {
-        strm << i+1 << "." <<  "course name: " << ptCourse->name << "  course unit: " << ptCourse->unit << "  course mark: " << *ptCourse->mark;
+        strm << i+1 << "." <<  "course name: " << ptCourse->getName() << "  course unit: " << ptCourse->getUnit()<< "  course mark: " << ptCourse->getMark();
 
         ptCourse++;
     }
@@ -85,8 +101,12 @@ istream& operator >> (istream& strm , Student& student)
     {
         cout << "Enter name and unit and mark of the course:" << endl;
         double mark;
-        strm >> ptCourse[i].name>> ptCourse[i].unit>> mark;
-        *ptCourse[i].mark = mark;
+        string sName;
+        int iUnit;
+        strm >> sName>> iUnit >> mark;
+        ptCourse[i].setName(sName);
+        ptCourse[i].setUnit(iUnit);
+        ptCourse[i].setMark(mark);
     }
     return strm;
 }

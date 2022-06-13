@@ -7,7 +7,7 @@ using namespace std;
 
 class Course
 {
-public:
+private:
     string name;
     int unit;
     double* mark;

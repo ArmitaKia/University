@@ -25,7 +25,7 @@ public:
     void setProfessorsAndStudents(Professor* professors,Student* student);
     double averageGpa() const;
     double averageGpaOfField(const string& fieldOfStudy);
-    double averageMarkOfCourse(const Course& course);
+    double averageMarkOfCourse(Course& course);
     bool isEnoughBudget();
     friend ostream& operator << (ostream& strm , University& university);
     friend istream& operator >> (istream& strm , University& university);

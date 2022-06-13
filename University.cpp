@@ -46,14 +46,14 @@ void University::setProfessorsAndStudents(Professor* professors,Student* student
     for(int i=0;i<numOfStudent;i++)
         this->students[i] = students[i];
 }
-double University::averageGpa()const//yeki in tabe moshkel dare
+double University::averageGpa()const
 {
     double sum =0;
     for(int i=0;i<numOfStudent;i++)
     {
         sum += students[i].gpa();
     }
-    return sum/numOfStudent;////////////ye limiti ham bezaram khob mishe
+    return sum/numOfStudent;
 }
 double University::averageGpaOfField(const string& fieldOfStudy)
 {
@@ -62,25 +62,25 @@ double University::averageGpaOfField(const string& fieldOfStudy)
     int number = 0;
     for(int i=0;i<numOfStudent;i++)
     {
-        if(ptStudent->fieldOfStudy == fieldOfStudy)
+        if(ptStudent->getFieldOfStudy() == fieldOfStudy)
         {
-            sum += *((ptStudent->course)->mark);
+            sum += (ptStudent->getCourse())->getMark();
             number++;
         }
         ptStudent++;
     }
-    return sum/number;//// ye limiti ham inja bezaram khob mishe
+    return sum/number;
 }
-double University::averageMarkOfCourse(const Course& course)//in ja
+double University::averageMarkOfCourse( Course& course)
 {
     double sum =0;
     Student* ptStudent = students;
     double number = 0;
     for(int i=0;i<numOfStudent;i++)
     {
-        if(ptStudent->course->name == course.name)
+        if(ptStudent->getCourse()->getName() == course.getName())
         {
-            sum += *((ptStudent[i].course)->mark);
+            sum += (ptStudent[i].getCourse())->getMark();
             number++;
         }
         ptStudent++;
@@ -114,13 +114,13 @@ ostream& operator << (ostream& strm , University& university)
     university.bubbleSort(university.professors,university.numOfProfessors);
     for(int i=0;i<university.numOfProfessors;i++)
     {
-        strm << i <<"." << university.professors[i].getTitle() << " " <<  university.professors[i].getFirstName() << " " << university.professors[i].getLastName()<< endl;
+        strm << i+1 <<"." << university.professors[i].getTitle() << " " <<  university.professors[i].getFirstName() << " " << university.professors[i].getLastName()<< endl;
     }
     cout << "### student information ###" << endl;
     university.bubbleSort(university.students,university.numOfStudent);
     for(int i=0;i<university.numOfStudent;i++)
     {
-        strm << i <<"." <<  university.students[i].getFirstName() << " " << university.students[i].getLastName()<< " work hours: "
+        strm << i+1 <<"." <<  university.students[i].getFirstName() << " " << university.students[i].getLastName()<< " work hours: "
              << university.students[i].getWorkHours()<< endl;//dige chya benevisam zibatar she?
     }
     return strm;

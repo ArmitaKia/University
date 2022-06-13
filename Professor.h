@@ -21,6 +21,7 @@ public:
     static bool validId(string idString);
     static bool checkTitle(string title);
     string getTitle();
+    void setTitle(const string &title);
 };
 ostream& operator << (ostream& strm , const Professor& professor);
 istream& operator >> (istream& strm , Professor& professor);

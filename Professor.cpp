@@ -24,6 +24,12 @@ Professor::Professor(const Professor& professor):Person(professor)
 {
     this->title = professor.title;
 }
+
+void Professor::setTitle(const string &title) {
+    Professor::title = title;
+}
+
+
 ostream& operator << (ostream& strm , const Professor& professor)
 {
     cout << "---- Professor information ----" << endl;
