@@ -94,12 +94,14 @@ double Student::gpa()
 {
     double sum =0;
     Course* ptCourse = course;
+    int x =0;
     for(int i=0;i<numOfCourse;i++)
     {
         sum += ptCourse->getMark() * ptCourse->getUnit();
+        x += ptCourse->getUnit();
         ptCourse++;
     }
-    return sum/numOfCourse;
+    return sum/x;
 }
 double Student::calculateSalary()
 {
