@@ -57,3 +57,13 @@
     {
         return *(this->mark);
     }
+    Course& Course::operator = (const Course &t)
+    {
+        if(this != &t)
+        {
+            this->name = t.name;
+            this->unit = t.unit;
+            *(this->mark) = *t.mark;
+        }
+        return *this;
+    }

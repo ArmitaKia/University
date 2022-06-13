@@ -25,6 +25,7 @@ class Course
     string getName();
     int getUnit();
     double getMark();
+    Course& operator = (const Course &t);
 };
     ostream& operator << (ostream& strm , const Course& course);
     istream& operator >> (istream& strm , Course course);

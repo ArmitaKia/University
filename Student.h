@@ -23,6 +23,7 @@ class Student : public Person
     double gpa();
     double calculateSalary();
     static bool validate(string idString);
+    Student& operator = (const Student &t);
     
     friend ostream& operator << (ostream& strm , Student& student);
     friend istream& operator >> (istream& strm , Student& student);

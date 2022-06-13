@@ -51,7 +51,7 @@
     {
         strm << "person name: " << student.firstName << " " << student.lastName << "  id: " << student.id << "  work hours: " << *student.workHours;
         strm << endl;
-        strm << "field of study: " << student.fieldOfStudy << "  number of courses: " << endl;
+        strm << "field of study: " << student.fieldOfStudy << "  number of courses: " << student.numOfCourse<< endl;
         Course* ptCourse = student.course;
         double w;
         for(int i=0;i<student.numOfCourse;i++)
@@ -81,15 +81,11 @@
         Course* ptCourse = student.course;
         for(int i=0;i<student.numOfCourse;i++)
         {
-            cout << "dakhele for";
             cout << "Enter name and unit and mark of the course:" << endl;
             double mark;
             strm >> ptCourse[i].name>> ptCourse[i].unit>> mark;
-            cout << "hamchenin inja" ;
-            *ptCourse[i].mark = mark;      
-            cout << "va inja";
+            *ptCourse[i].mark = mark;
         }
-        cout << "bade for";
         return strm;    
     }
     double Student::gpa()
@@ -118,5 +114,22 @@
         x=regex_search(idString,matches,reg);
         cout << x;
         return x;
+    }
+    Student& Student::Student::operator = (const Student &t)
+    {
+        if(this != &t)
+     
+        {
+            firstName = t.firstName;
+            lastName = t.lastName;
+            id = t.id;
+            *workHours = *(t.workHours);
+            fieldOfStudy = t.fieldOfStudy;
+            numOfCourse = t.numOfCourse;
+            for(int i=0;i<t.numOfCourse;i++)
+                course[i] = t.course[i];
+        }
+  
+    return *this;
     }
 

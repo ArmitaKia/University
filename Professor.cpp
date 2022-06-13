@@ -1,4 +1,5 @@
 #include "Professor.h"
+#include "Course.h"
     Professor::Professor()
     {}
     Professor::Professor(string firstName,string lastName,string id,double* workHours,string title):Person::Person(firstName,lastName,workHours)
@@ -23,7 +24,7 @@
     {
         this->title = professor.title;
     }
-    ostream& operator << (ostream& strm , const Professor professor)
+    ostream& operator << (ostream& strm , const Professor& professor)
     {
         strm << "Professor:" << professor.title << " " << professor.firstName << " " << professor.lastName 
         << "  id: " << professor.id << "  work hours: " << *professor.workHours;
@@ -108,4 +109,18 @@
     string Professor::getTitle()
     {
         return title;
+    }
+    Professor& Professor::Professor::operator = (const Professor &t)
+    {
+        if(this != &t)
+     
+        {
+            firstName = t.firstName;
+            lastName = t.lastName;
+            id = t.id;
+            *workHours = *(t.workHours);
+            title = t.title;
+        }
+  
+    return *this;
     }
