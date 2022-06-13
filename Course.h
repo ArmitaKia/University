@@ -17,8 +17,8 @@ class Course
     Course(string name,int unit,double* mark);
     Course(const Course& course);
     ~Course();
-    friend ostream& operator << (ostream& strm , const Course course);
-    friend istream& operator >> (istream& strm , Course& course);
+    friend ostream& operator << (ostream& strm , const Course& course);
+    friend istream& operator >> (istream& strm , Course course);
     void setName(string name);
     void setUnit(int unit);
     void setMark(double mark);
@@ -26,6 +26,6 @@ class Course
     int getUnit();
     double getMark();
 };
-    ostream& operator << (ostream& strm , const Course course);
-    istream& operator >> (istream& strm , Course& course);
+    ostream& operator << (ostream& strm , const Course& course);
+    istream& operator >> (istream& strm , Course course);
 #endif

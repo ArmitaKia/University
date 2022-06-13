@@ -20,12 +20,12 @@
     {
         delete mark;
     }
-    ostream& operator << (ostream& strm , const Course course)
+    ostream& operator << (ostream& strm ,const Course& course)
     {
         strm << "course name: " << course.name << "  course unit: " << course.unit << "  course mark: " << *course.mark;  
         return strm;
     }
-    istream& operator >> (istream& strm , Course& course)
+    istream& operator >> (istream& strm , Course course)
     {   
         cout << "Enter name and unit and mark of the course:" << endl;
         double mark;

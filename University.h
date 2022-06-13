@@ -35,12 +35,7 @@ class University
     void bubbleSort(Student* studnet, int n);
     int calculateYear(Student studnet);
     void swap (Student studnet1,Student studnet2);
-    void bubbleSort(Professor* prof, int n);
-    int calculateYear(Professor prof);
-    void swap (Professor prof1,Professor prof2);
-    void bubbleSort(Student* studnet, int n);
-    int calculateYear(Student studnet);
-    void swap (Student studnet1,Student studnet2);
+    
 };
     ostream& operator << (ostream& strm , University university);
     istream& operator >> (istream& strm , University& university);

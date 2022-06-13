@@ -1,9 +1,9 @@
 #include "Professor.h"
     Professor::Professor()
     {}
-    Professor::Professor(string firstName,string lastName,string id,double* workHours,string title):Person(firstName,lastName,workHours)
+    Professor::Professor(string firstName,string lastName,string id,double* workHours,string title):Person::Person(firstName,lastName,workHours)
     {
-         if(validate(id))
+         if(validId(id))
             this->id = id;
         else
         {
@@ -31,11 +31,11 @@
     }
     istream& operator >> (istream& strm , Professor& professor)
     {   
-        cout << "Enter first name,last name,id and work hours of the student: " << endl;
+        cout << "Enter first name,last name,id and work hours of the perofessor: " << endl;
         double workHours;
         string id;
         strm >> professor.firstName >> professor.lastName >> id >> workHours;
-        if(Professor::validate(id))
+        if(Professor::validId(id))
             professor.id = id;
         else
         {
@@ -46,7 +46,7 @@
         cout << "Enter title (Instructor-Assistant-ProfessorAssociate-Professor-Professor)" << endl;
         string title;
         strm >> title;
-        if(checkTitle(title))
+        if(Professor::checkTitle(title))
             professor.title = title;
         else
         {
@@ -85,15 +85,16 @@
         double extraSalary = year*2000;
         return baseSalary+levelBaseSalary+extraSalary+profLevelSalary;
     }
-    bool Professor::validate(string idString)
+    bool Professor::validId(string idString)
     {
         bool x;
-        string str =  "(84|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|00)(#)(\\D{0,2})(\\d[1237890]{5})";
-        regex reg(str);
+        regex reg(R"(([84-99]{2}|[00]{2})(#)(\D{0,2})([1237890]{5})$)");
         smatch matches;
         x=regex_search(idString,matches,reg);
+        cout << x;
+        return x;
     }
-    bool checkTitle(string title)
+    bool Professor::checkTitle(string title)
     {
         string s1,s2,s3,s4;
         s1 ="Instructor" ;

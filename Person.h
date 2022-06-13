@@ -33,9 +33,9 @@ class Person
     double calculateSalary(double workHours);
     static bool validate(string idString);
 
-    friend ostream& operator << (ostream& strm , const Person person);
+    friend ostream& operator << (ostream& strm , const Person& person);
     friend istream& operator >> (istream& strm , Person& person);
 };
-    ostream& operator << (ostream& strm , const Person person);
+    ostream& operator << (ostream& strm , const Person& person);
     istream& operator >> (istream& strm , Person& person);
 #endif

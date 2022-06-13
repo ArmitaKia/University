@@ -117,6 +117,7 @@
             strm << i <<"." << " " <<  university.students[i].getFirstName() << " " << university.students[i].getLastName()<< " work hours: "
             << university.students[i].getWorkHours()<< endl;//dige chya benevisam zibatar she?
         }
+        return strm;
 
     }
     istream& operator >> (istream& strm , University& university)

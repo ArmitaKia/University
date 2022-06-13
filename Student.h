@@ -16,18 +16,17 @@ class Student : public Person
 
     public:
     Student();   
-    Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfSutdy,int numOfCourse)
-    :Person(firstName,lastName,workHours){};
-    Student(const Student& student):Person(student){};//inja {} hast moshkeli nadare?
+    Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfSutdy,int numOfCourse);
+    Student(const Student& student);
     ~Student();
     void setCourse(Course* ptCourse);
     double gpa();
     double calculateSalary();
     static bool validate(string idString);
     
-    friend ostream& operator << (ostream& strm , const Student student);
+    friend ostream& operator << (ostream& strm , Student& student);
     friend istream& operator >> (istream& strm , Student& student);
 };
-    ostream& operator << (ostream& strm , const Student student);
+    ostream& operator << (ostream& strm , Student& student);
     istream& operator >> (istream& strm , Student& student);
 #endif

@@ -4,7 +4,7 @@
 
     Student::Student()
     {
-        course = new Course[numOfCourse];
+        course = new Course[20];
     }
     void Student::setCourse(Course* ptCourse)
     {
@@ -31,13 +31,13 @@
         Course* ptCourse = this->course;
         for(int i=0;i<numOfCourse;i++)
         {
-            *ptCourse = *course;
-            ptCourse++;
-            course++;
+            ptCourse[i].name = course[i].name;
+            ptCourse[i].unit = course[i].unit;
+            ptCourse[i].mark = course[i].mark;
         }
     }
 
-    Student::Student(const Student& student):Person(student)//in doroste aya?????????????////
+    Student::Student(const Student& student):Person(student)
     {
         this->numOfCourse = student.numOfCourse;
         this->fieldOfStudy = student.fieldOfStudy;
@@ -45,17 +45,19 @@
     }
     Student::~Student()
     {
-        delete course;
+        delete [] course;
     }
-    ostream& operator << (ostream& strm , const Student student)
+    ostream& operator << (ostream& strm , Student& student)
     {
         strm << "person name: " << student.firstName << " " << student.lastName << "  id: " << student.id << "  work hours: " << *student.workHours;
         strm << endl;
         strm << "field of study: " << student.fieldOfStudy << "  number of courses: " << endl;
         Course* ptCourse = student.course;
+        double w;
         for(int i=0;i<student.numOfCourse;i++)
         {
             strm << "course name: " << ptCourse->name << "  course unit: " << ptCourse->unit << "  course mark: " << *ptCourse->mark;
+
             ptCourse++;
         } 
         return strm;
@@ -79,12 +81,15 @@
         Course* ptCourse = student.course;
         for(int i=0;i<student.numOfCourse;i++)
         {
+            cout << "dakhele for";
             cout << "Enter name and unit and mark of the course:" << endl;
             double mark;
-            strm >> ptCourse->name >> ptCourse->unit >> mark;
-            mark = *ptCourse->mark;
-            ptCourse++;
+            strm >> ptCourse[i].name>> ptCourse[i].unit>> mark;
+            cout << "hamchenin inja" ;
+            *ptCourse[i].mark = mark;      
+            cout << "va inja";
         }
+        cout << "bade for";
         return strm;    
     }
     double Student::gpa()
@@ -108,9 +113,10 @@
     bool Student::validate(string idString)
     {
         bool x;
-        string str =  "((84|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|00)(\\*)(\\D{0,2})(\\d[1237890]{5})";
-        regex reg(str);
+        regex reg(R"(([84-99]{2}|[00]{2})(\\*)(\D{0,2})([1237890]{5})$)");
         smatch matches;
         x=regex_search(idString,matches,reg);
+        cout << x;
+        return x;
     }
 

@@ -24,7 +24,7 @@
         }
         this->workHours = new double;
         *(this->workHours) = *workHours;
-    }//use to main
+    }
     Person::Person(const Person& person)
     {
         this->firstName = person.firstName;
@@ -36,7 +36,7 @@
     {
         delete workHours;
     }
-    ostream& operator << (ostream& strm , const Person person)
+    ostream& operator << (ostream& strm , const Person& person)
     {
         strm << "person name: " << person.firstName << " " << person.lastName << "  id: " << person.id << "  work hours: " << *person.workHours; 
         return strm;
@@ -67,8 +67,7 @@
             *(this->workHours) = *person.workHours;
         }
         return *this;
-    }//doroste
-    //az inja be bad ham doroste:)
+    }
     void Person::setFirstName(string firstName)
     {
         this->firstName = firstName;
@@ -107,9 +106,10 @@
     }
     bool Person::validate(string idString)
     {
-        bool x;
-        string str =  "(84|85|86|87|88|89|90|91|92|93|94|95|96|97|98|99|00)(\\D{1,3})(\\d[1237890]{5})";
-        regex reg(str);
+       bool x;
+        regex reg(R"(([84-99]{2}|[00]{2})(\D{1,3})([1237890]{5})$)");
         smatch matches;
         x=regex_search(idString,matches,reg);
+        cout << x;
+        return x;
     }
