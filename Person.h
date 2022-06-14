@@ -3,7 +3,6 @@
 
 #include <iostream>
 #include <regex>
-
 using namespace std;
 
 class Person
@@ -16,8 +15,8 @@ protected:
 
 public:
     Person();
-    Person(string firstName,string lastName,double* workHours);
-    Person(string firstName,string lastName,string id,double* workHours);
+    Person(string firstName,string lastName,double workHours);
+    Person(string firstName,string lastName,string id,double workHours);
     Person(const Person& person);
     ~Person();
 

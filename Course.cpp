@@ -3,17 +3,18 @@ Course::Course()
 {
     this->mark = new double;
 }
-Course::Course(string name,int unit,double* mark)
+Course::Course(string name,int unit,double mark)
 {
     this->name = name;
     this->unit = unit;
     this->mark = new double;
-    *(this->mark) = *mark;
+    *(this->mark) = mark;
 }
 Course::Course(const Course& course)
 {
     this->name = course.name;
     this->unit = course.unit;
+    this->mark = new double ;
     *(this->mark) = *(course.mark);
 }
 Course::~Course()
@@ -30,7 +31,7 @@ istream& operator >> (istream& strm , Course course)
     cout << "Enter name and unit and mark of the course:" << endl;
     double mark;
     strm >> course.name >> course.unit >> mark;
-    mark = *course.mark;
+    *course.mark = mark;
     return strm;
 }
 void Course::setName(string name)
@@ -45,7 +46,7 @@ void Course::setMark(double mark)
 {
     *(this->mark) = mark;
 }
-string Course::getName()
+string Course::getName() const
 {
     return this->name;
 }
@@ -53,10 +54,11 @@ int Course::getUnit()
 {
     return this->unit;
 }
-double Course::getMark()
-{
-    return *(this->mark);
+
+double Course::getMark() const {
+    return *mark;
 }
+
 Course& Course::operator = (const Course &t)
 {
     if(this != &t)

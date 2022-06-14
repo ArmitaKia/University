@@ -4,6 +4,7 @@
 
 #include "Professor.h"
 #include "Student.h"
+#include "Course.h"
 
 
 using namespace std;
@@ -25,16 +26,16 @@ public:
     void setProfessorsAndStudents(Professor* professors,Student* student);
     double averageGpa() const;
     double averageGpaOfField(const string& fieldOfStudy);
-    double averageMarkOfCourse(Course& course);
+    double averageMarkOfCourse(const Course& course);
     bool isEnoughBudget();
     friend ostream& operator << (ostream& strm , University& university);
     friend istream& operator >> (istream& strm , University& university);
     void bubbleSort(Professor* prof, int n);
     int calculateYear(Professor prof);
-    void swap (Professor prof1,Professor prof2);
-    void bubbleSort(Student* studnet, int n);
+    void bubbleSort( int n);
     static int calculateYear(Student studnet);
-    void swap (Student studnet1,Student studnet2);
+    void printCourses(Course* courses, int numOfCourses );
+    void bubbleSort(Course* courses, int numOfCourses );
 
 };
 ostream& operator << (ostream& strm , University& university);

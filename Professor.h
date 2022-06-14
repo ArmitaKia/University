@@ -12,7 +12,7 @@ private:
 
 public:
     Professor();
-    Professor(string firstName,string lastName,string id,double* workHours,string title);
+    Professor(string firstName,string lastName,string id,double workHours,string title);
     Professor(const Professor& professor);
     friend ostream& operator << (ostream& strm , const Professor& professor);
     friend istream& operator >> (istream& strm , Professor& professor);

@@ -4,14 +4,14 @@ Person::Person()
 {
     workHours = new double;
 }
-Person::Person(string firstName,string lastName,double* workHours)
+Person::Person(string firstName,string lastName,double workHours)
 {
     this->firstName = firstName;
     this->lastName = lastName;
     this->workHours = new double;
-    *(this->workHours) = *workHours;
+    *(this->workHours) = workHours;
 }
-Person::Person(string firstName,string lastName,string id,double* workHours)
+Person::Person(string firstName,string lastName,string id,double workHours)
 {
     this->firstName = firstName;
     this->lastName = lastName;
@@ -23,14 +23,15 @@ Person::Person(string firstName,string lastName,string id,double* workHours)
         exit(0);
     }
     this->workHours = new double;
-    *(this->workHours) = *workHours;
+    *(this->workHours) = workHours;
 }
 Person::Person(const Person& person)
 {
     this->firstName = person.firstName;
     this->lastName = person.lastName;
     this->id = person.id;
-    *(this->workHours) = *person.workHours;
+    this->workHours = new double ;
+    *(this->workHours) = *(person.workHours);
 }
 Person::~Person()
 {
@@ -107,9 +108,10 @@ double Person::calculateSalary(double workHours)
 bool Person::validate(string idString)
 {
     bool x;
-    regex reg(R"(([84-99]{2}|[00]{2})(\D{1,3})([1237890]{5})$)");
+    regex reg(R"((8[4-9]|9[0-9]|00)(\D{1,3})([1237890]{5})$)");
     smatch matches;
     x=regex_search(idString,matches,reg);
     return x;
 }
+
     

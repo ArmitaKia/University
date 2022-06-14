@@ -26,7 +26,7 @@ C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug
 C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/ContinuousCoverage.dir
 C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/ContinuousMemCheck.dir
 C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/ContinuousSubmit.dir
-C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/universityTest.dir
+C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/UniversityPro.dir
 C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/package.dir
 C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/package_source.dir
 C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug/CMakeFiles/test.dir

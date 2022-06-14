@@ -2,7 +2,7 @@
 #include "Course.h"
 Professor::Professor()
 {}
-Professor::Professor(string firstName,string lastName,string id,double* workHours,string title):Person::Person(firstName,lastName,workHours)
+Professor::Professor(string firstName,string lastName,string id,double workHours,string title):Person::Person(firstName,lastName,workHours)
 {
     if(validId(id))
         this->id = id;
@@ -96,10 +96,9 @@ double Professor::calculateSalary()
 bool Professor::validId(string idString)
 {
     bool x;
-    regex reg(R"(([84-99]{2}|[00]{2})(#)(\D{0,2})([1237890]{5})$)");
+    regex reg(R"((8[4-9]|9[0-9]|00)(#)(\D{0,2})([1237890]{5})$)");
     smatch matches;
     x=regex_search(idString,matches,reg);
-    cout << x;
     return x;
 }
 bool Professor::checkTitle(string title)

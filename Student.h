@@ -16,7 +16,7 @@ private:
 
 public:
     Student();
-    Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfStudy,int numOfCourse);
+    Student(string firstName,string lastName,string id,double workHours,Course* course,string fieldOfStudy,int numOfCourse);
     Student(const Student& student);
     ~Student();
     void setCourse(Course* ptCourse);

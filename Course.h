@@ -14,7 +14,7 @@ private:
 
 public:
     Course();
-    Course(string name,int unit,double* mark);
+    Course(string name,int unit,double mark);
     Course(const Course& course);
     ~Course();
     friend ostream& operator << (ostream& strm , const Course& course);
@@ -22,10 +22,10 @@ public:
     void setName(string name);
     void setUnit(int unit);
     void setMark(double mark);
-    string getName();
+    string getName() const;
     int getUnit();
-    double getMark();
     Course& operator = (const Course &t);
+    double getMark() const;
 };
 ostream& operator << (ostream& strm , const Course& course);
 istream& operator >> (istream& strm , Course course);

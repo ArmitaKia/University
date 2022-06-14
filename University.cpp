@@ -1,4 +1,3 @@
-
 #include "University.h"
 #include "Professor.h"
 #include "Student.h"
@@ -25,11 +24,9 @@ University::University(const University& university)
     this->budget = university.budget;
     this->numOfProfessors = university.numOfProfessors;
     this->numOfStudent = university.numOfStudent;
-    delete [] students;
     students = new Student[university.numOfStudent];
     for(int i=0;i< this->numOfProfessors;i++)
         this->professors[i] = university.professors[i];
-    delete [] professors;
     professors = new Professor[university.numOfProfessors];
     for(int i=0;i< this->numOfStudent;i++)
         this->students[i] = university.students[i];
@@ -71,7 +68,7 @@ double University::averageGpaOfField(const string& fieldOfStudy)
     }
     return sum/number;
 }
-double University::averageMarkOfCourse( Course& course)
+double University::averageMarkOfCourse( const Course& course)
 {
     double sum =0;
     Student* ptStudent = students;
@@ -112,16 +109,18 @@ ostream& operator << (ostream& strm , University& university)
     cout << "---- UNIVERSITY INFO ----" << endl;
     cout << "### professors information ###" << endl;
     university.bubbleSort(university.professors,university.numOfProfessors);
+    cout << "Based on work experience and alphabetical sort" << endl;
     for(int i=0;i<university.numOfProfessors;i++)
     {
         strm << i+1 <<"." << university.professors[i].getTitle() << " " <<  university.professors[i].getFirstName() << " " << university.professors[i].getLastName()<< endl;
     }
     cout << "### student information ###" << endl;
-    university.bubbleSort(university.students,university.numOfStudent);
+    university.bubbleSort(university.numOfStudent);
+    cout << "Based on study history and alphabetical sort" << endl;
     for(int i=0;i<university.numOfStudent;i++)
     {
         strm << i+1 <<"." <<  university.students[i].getFirstName() << " " << university.students[i].getLastName()<< " work hours: "
-             << university.students[i].getWorkHours()<< endl;//dige chya benevisam zibatar she?
+             << university.students[i].getWorkHours()<< endl;
     }
     return strm;
 
@@ -138,19 +137,22 @@ void University::bubbleSort(Professor* prof, int n)
     for(i = 0; i < n - 1; i++)
         for (j = 0; j < n - i - 1; j++)
         {
-
-
             if (calculateYear(prof[j]) > calculateYear(prof[j + 1]))
+            {
+
                 swap(prof[j], prof[j + 1]);
+
+            }
             if(calculateYear(prof[j]) == calculateYear(prof[j + 1]))
             {
-                //bayad bar hasbe horof alephba sort she
+                if(prof[j].getFirstName()>prof[j+1].getFirstName())
+                    swap(prof[j],prof[j+1]);
             }
         }
 }
 int University::calculateYear(Professor prof)
 {
-    int year;
+    int year =0;
     string firstTwo;
     firstTwo = prof.getId().substr(0, 2);
     if(firstTwo =="00")
@@ -159,29 +161,20 @@ int University::calculateYear(Professor prof)
         year = 100 - stoi(firstTwo);
     return year;
 }
-void University::swap (Professor prof1,Professor prof2)
+void University::bubbleSort(int n)
 {
-    Professor temp;
-    temp = prof1;
-    prof1 = prof2;
-    prof2 = temp;
-}
-
-
-void University::bubbleSort(Student* studnet, int n)
-{
-
-    int i, j;
-    for(i = 0; i < n - 1; i++)
-        for (j = 0; j < n - i - 1; j++)
+    Student* s = this->students;
+    for(int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)
         {
 
 
-            if (calculateYear(studnet[j]) > calculateYear(studnet[j + 1]))
-                swap(studnet[j], studnet[j + 1]);
-            if(calculateYear(studnet[j]) == calculateYear(studnet[j + 1]))
+            if (calculateYear(s[j]) > calculateYear(s[j + 1]))
+                swap(s[j], s[j + 1]);
+            if(calculateYear(s[j]) == calculateYear(s[j + 1]))
             {
-                //bayad bar hasbe horof alephba sort she
+                if(s[j].getFirstName()>s[j+1].getFirstName())
+                    swap(s[j],s[j+1]);
             }
         }
 }
@@ -196,10 +189,21 @@ int University::calculateYear(Student studnet)
         year = 100 - stoi(firstTwo);
     return year;
 }
-void University::swap (Student studnet1,Student studnet2)
+void University::printCourses(Course* courses, int numOfCourses ){
+    bubbleSort(courses,numOfCourses);
+    for(int i=0;i<numOfCourses;i++){
+        cout<<courses[i]<<endl;
+    }
+
+}
+void University::bubbleSort(Course* courses, int n )
 {
-    Student temp;
-    temp = studnet1;
-    studnet1 = studnet2;
-    studnet2 = temp;
+    for(int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if(averageMarkOfCourse(courses[j]) > averageMarkOfCourse(courses[j+1]))
+                swap(courses[j],courses[j+1]);
+        }
+
+
 }

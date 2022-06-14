@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: universityTest
+# Project: UniversityPro
 # Configurations: Debug
 # =============================================================================
 
@@ -209,67 +209,67 @@ build ContinuousMemCheck: phony CMakeFiles/ContinuousMemCheck
 build ContinuousSubmit: phony CMakeFiles/ContinuousSubmit
 
 # =============================================================================
-# Object build statements for EXECUTABLE target universityTest
+# Object build statements for EXECUTABLE target UniversityPro
 
 
 #############################################
-# Order-only phony target for universityTest
+# Order-only phony target for UniversityPro
 
-build cmake_object_order_depends_target_universityTest: phony || CMakeFiles/universityTest.dir
+build cmake_object_order_depends_target_UniversityPro: phony || CMakeFiles/UniversityPro.dir
 
-build CMakeFiles/universityTest.dir/main.cpp.obj: CXX_COMPILER__universityTest_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/main.cpp || cmake_object_order_depends_target_universityTest
-  DEP_FILE = CMakeFiles\universityTest.dir\main.cpp.obj.d
+build CMakeFiles/UniversityPro.dir/main.cpp.obj: CXX_COMPILER__UniversityPro_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/main.cpp || cmake_object_order_depends_target_UniversityPro
+  DEP_FILE = CMakeFiles\UniversityPro.dir\main.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\universityTest.dir
-  OBJECT_FILE_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
+  OBJECT_FILE_DIR = CMakeFiles\UniversityPro.dir
 
-build CMakeFiles/universityTest.dir/Course.cpp.obj: CXX_COMPILER__universityTest_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Course.cpp || cmake_object_order_depends_target_universityTest
-  DEP_FILE = CMakeFiles\universityTest.dir\Course.cpp.obj.d
+build CMakeFiles/UniversityPro.dir/Course.cpp.obj: CXX_COMPILER__UniversityPro_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Course.cpp || cmake_object_order_depends_target_UniversityPro
+  DEP_FILE = CMakeFiles\UniversityPro.dir\Course.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\universityTest.dir
-  OBJECT_FILE_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
+  OBJECT_FILE_DIR = CMakeFiles\UniversityPro.dir
 
-build CMakeFiles/universityTest.dir/Person.cpp.obj: CXX_COMPILER__universityTest_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Person.cpp || cmake_object_order_depends_target_universityTest
-  DEP_FILE = CMakeFiles\universityTest.dir\Person.cpp.obj.d
+build CMakeFiles/UniversityPro.dir/Person.cpp.obj: CXX_COMPILER__UniversityPro_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Person.cpp || cmake_object_order_depends_target_UniversityPro
+  DEP_FILE = CMakeFiles\UniversityPro.dir\Person.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\universityTest.dir
-  OBJECT_FILE_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
+  OBJECT_FILE_DIR = CMakeFiles\UniversityPro.dir
 
-build CMakeFiles/universityTest.dir/Student.cpp.obj: CXX_COMPILER__universityTest_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Student.cpp || cmake_object_order_depends_target_universityTest
-  DEP_FILE = CMakeFiles\universityTest.dir\Student.cpp.obj.d
+build CMakeFiles/UniversityPro.dir/Student.cpp.obj: CXX_COMPILER__UniversityPro_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Student.cpp || cmake_object_order_depends_target_UniversityPro
+  DEP_FILE = CMakeFiles\UniversityPro.dir\Student.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\universityTest.dir
-  OBJECT_FILE_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
+  OBJECT_FILE_DIR = CMakeFiles\UniversityPro.dir
 
-build CMakeFiles/universityTest.dir/Professor.cpp.obj: CXX_COMPILER__universityTest_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Professor.cpp || cmake_object_order_depends_target_universityTest
-  DEP_FILE = CMakeFiles\universityTest.dir\Professor.cpp.obj.d
+build CMakeFiles/UniversityPro.dir/Professor.cpp.obj: CXX_COMPILER__UniversityPro_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/Professor.cpp || cmake_object_order_depends_target_UniversityPro
+  DEP_FILE = CMakeFiles\UniversityPro.dir\Professor.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\universityTest.dir
-  OBJECT_FILE_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
+  OBJECT_FILE_DIR = CMakeFiles\UniversityPro.dir
 
-build CMakeFiles/universityTest.dir/University.cpp.obj: CXX_COMPILER__universityTest_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/University.cpp || cmake_object_order_depends_target_universityTest
-  DEP_FILE = CMakeFiles\universityTest.dir\University.cpp.obj.d
+build CMakeFiles/UniversityPro.dir/University.cpp.obj: CXX_COMPILER__UniversityPro_Debug C$:/Users/RayaneGostar/Downloads/Telegram$ Desktop/UniversityPro/University.cpp || cmake_object_order_depends_target_UniversityPro
+  DEP_FILE = CMakeFiles\UniversityPro.dir\University.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\universityTest.dir
-  OBJECT_FILE_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
+  OBJECT_FILE_DIR = CMakeFiles\UniversityPro.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target universityTest
+# Link build statements for EXECUTABLE target UniversityPro
 
 
 #############################################
-# Link the executable universityTest.exe
+# Link the executable UniversityPro.exe
 
-build universityTest.exe: CXX_EXECUTABLE_LINKER__universityTest_Debug CMakeFiles/universityTest.dir/main.cpp.obj CMakeFiles/universityTest.dir/Course.cpp.obj CMakeFiles/universityTest.dir/Person.cpp.obj CMakeFiles/universityTest.dir/Student.cpp.obj CMakeFiles/universityTest.dir/Professor.cpp.obj CMakeFiles/universityTest.dir/University.cpp.obj
+build UniversityPro.exe: CXX_EXECUTABLE_LINKER__UniversityPro_Debug CMakeFiles/UniversityPro.dir/main.cpp.obj CMakeFiles/UniversityPro.dir/Course.cpp.obj CMakeFiles/UniversityPro.dir/Person.cpp.obj CMakeFiles/UniversityPro.dir/Student.cpp.obj CMakeFiles/UniversityPro.dir/Professor.cpp.obj CMakeFiles/UniversityPro.dir/University.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\universityTest.dir
+  OBJECT_DIR = CMakeFiles\UniversityPro.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = universityTest.exe
-  TARGET_IMPLIB = libuniversityTest.dll.a
-  TARGET_PDB = universityTest.exe.dbg
+  TARGET_FILE = UniversityPro.exe
+  TARGET_IMPLIB = libUniversityPro.dll.a
+  TARGET_PDB = UniversityPro.exe.dbg
 
 
 #############################################
@@ -557,7 +557,7 @@ build CMakeFiles/ContinuousSubmit | ${cmake_ninja_workdir}CMakeFiles/ContinuousS
 # =============================================================================
 # Target aliases.
 
-build universityTest: phony universityTest.exe
+build UniversityPro: phony UniversityPro.exe
 
 # =============================================================================
 # Folder targets.
@@ -567,7 +567,7 @@ build universityTest: phony universityTest.exe
 #############################################
 # Folder: C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug
 
-build all: phony universityTest.exe
+build all: phony UniversityPro.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.

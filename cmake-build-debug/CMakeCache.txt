@@ -154,7 +154,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=universityTest
+CMAKE_PROJECT_NAME:STATIC=UniversityPro
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -316,13 +316,13 @@ Project_SOURCE_DIR:STATIC=C:/Users/RayaneGostar/Downloads/Telegram Desktop/Unive
 SITE:STRING=DESKTOP-5QE3VLL
 
 //Value Computed by CMake
-universityTest_BINARY_DIR:STATIC=C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug
+UniversityPro_BINARY_DIR:STATIC=C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro/cmake-build-debug
 
 //Value Computed by CMake
-universityTest_IS_TOP_LEVEL:STATIC=ON
+UniversityPro_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-universityTest_SOURCE_DIR:STATIC=C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro
+UniversityPro_SOURCE_DIR:STATIC=C:/Users/RayaneGostar/Downloads/Telegram Desktop/UniversityPro
 
 
 ########################

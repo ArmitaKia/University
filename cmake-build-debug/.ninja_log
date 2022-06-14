@@ -1,18 +1,8 @@
 # ninja log v5
-11	803	6768596717103270	CMakeFiles/universityTest.dir/Course.cpp.obj	f09e15fa58ba1aea
-0	1689	6768596725583333	CMakeFiles/universityTest.dir/main.cpp.obj	7d0d5304f59d1a26
-13	1923	6768596728302196	CMakeFiles/universityTest.dir/University.cpp.obj	35520399c125589b
-6	5181	6768596760588512	CMakeFiles/universityTest.dir/Professor.cpp.obj	1811ff8e80227e22
-4	5472	6768596763508881	CMakeFiles/universityTest.dir/Person.cpp.obj	66639000a7ec92d3
-8	5474	6768596763629483	CMakeFiles/universityTest.dir/Student.cpp.obj	b2bdb3caa04f6209
-5474	8620	6768596795146923	universityTest.exe	a51cef34345690ca
-7	474	6768617382487376	CMakeFiles/universityTest.dir/Course.cpp.obj	f09e15fa58ba1aea
-3	1062	6768617388362156	CMakeFiles/universityTest.dir/main.cpp.obj	7d0d5304f59d1a26
-10	1111	6768617388847913	CMakeFiles/universityTest.dir/University.cpp.obj	35520399c125589b
-5	3171	6768617409304716	CMakeFiles/universityTest.dir/Student.cpp.obj	b2bdb3caa04f6209
-8	3222	6768617409808757	CMakeFiles/universityTest.dir/Professor.cpp.obj	1811ff8e80227e22
-3222	5922	6768617436897636	universityTest.exe	a51cef34345690ca
-3	929	6768629399619994	CMakeFiles/universityTest.dir/main.cpp.obj	7d0d5304f59d1a26
-6	951	6768629399902952	CMakeFiles/universityTest.dir/University.cpp.obj	35520399c125589b
-5	2748	6768629417700593	CMakeFiles/universityTest.dir/Student.cpp.obj	b2bdb3caa04f6209
-2749	5623	6768629446508633	universityTest.exe	a51cef34345690ca
+7	542	6769327675685197	CMakeFiles/UniversityPro.dir/Course.cpp.obj	9bf5313851541a74
+0	1122	6769327681537236	CMakeFiles/UniversityPro.dir/main.cpp.obj	42b277e2638df634
+9	1191	6769327682243930	CMakeFiles/UniversityPro.dir/University.cpp.obj	73733802ede0fc47
+2	3013	6769327700354780	CMakeFiles/UniversityPro.dir/Person.cpp.obj	37749ef142f1af7d
+4	3107	6769327701285530	CMakeFiles/UniversityPro.dir/Student.cpp.obj	5f446e039b81c450
+5	3160	6769327701777742	CMakeFiles/UniversityPro.dir/Professor.cpp.obj	5c107314f912c0a5
+3160	6115	6769327731252384	UniversityPro.exe	b4ec325b6412489a

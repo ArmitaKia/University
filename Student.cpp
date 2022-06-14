@@ -18,7 +18,7 @@ void Student::setCourse(Course* ptCourse)
         course++;
     }
 }
-Student::Student(string firstName,string lastName,string id,double* workHours,Course* course,string fieldOfStudy,int numOfCourse)
+Student::Student(string firstName,string lastName,string id,double workHours,Course* course,string fieldOfStudy,int numOfCourse)
         :Person(firstName,lastName,workHours)
 {
     if(validate(id))
@@ -31,7 +31,6 @@ Student::Student(string firstName,string lastName,string id,double* workHours,Co
     this->numOfCourse = numOfCourse;
     this->fieldOfStudy = fieldOfStudy;
     this->course = new Course[numOfCourse];
-    Course* ptCourse = this->course;
     for(int i=0;i<numOfCourse;i++)
     {
         this->course[i] = course[i];
@@ -42,6 +41,7 @@ Student::Student(const Student& student):Person(student)
 {
     this->numOfCourse = student.numOfCourse;
     this->fieldOfStudy = student.fieldOfStudy;
+    this->course = new Course[student.numOfCourse];
     *(this->course) = *student.course;
 }
 Student::~Student()
@@ -133,16 +133,14 @@ double Student::calculateSalary()
 bool Student::validate(string idString)
 {
     bool x;
-    regex reg(R"(([84-99]{2}|[00]{2})(\\*)(\D{0,2})([1237890]{5})$)");
+    regex reg(R"((8[4-9]|9[0-9]|00)(\\*)(\D{0,2})([1237890]{5})$)");
     smatch matches;
     x=regex_search(idString,matches,reg);
-    cout << x;
     return x;
 }
 Student& Student::Student::operator = (const Student &t)
 {
     if(this != &t)
-
     {
         firstName = t.firstName;
         lastName = t.lastName;
@@ -153,7 +151,6 @@ Student& Student::Student::operator = (const Student &t)
         for(int i=0;i<t.numOfCourse;i++)
             course[i] = t.course[i];
     }
-
     return *this;
 }
 
